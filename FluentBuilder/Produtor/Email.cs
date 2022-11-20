@@ -1,4 +1,6 @@
-﻿namespace FluentBuilder.Produtor
+﻿using FluentBuilder.Componentes;
+
+namespace FluentBuilder.Produtor
 {
     class Email
     {
@@ -6,6 +8,6 @@
         public string Destino { get; set; }
         public string Origem { get; set; }
         public string SenhaTemporaria { get; set; }
-        public string TipoEmail { get; set; }
+        public EmailType TipoEmail { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FluentBuilder.Produtor;
+﻿using FluentBuilder.Componentes;
+using FluentBuilder.Produtor;
 
 namespace FluentBuilder.Builders
 {
@@ -35,7 +36,7 @@ namespace FluentBuilder.Builders
             return this;
         }
 
-        public EmailBuilder TipoEmail(string tipoEmail)
+        public EmailBuilder TipoEmail(EmailType tipoEmail)
         {
             _email.TipoEmail = tipoEmail;
             return this;
