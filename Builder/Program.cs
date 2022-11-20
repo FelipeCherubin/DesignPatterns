@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Builder.Builders;
+using Builder.Diretores;
+using Builder.Produtor;
+using System;
 
 namespace Builder
 {
@@ -6,7 +9,22 @@ namespace Builder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            VeiculoBuilder builder = new();
+            Diretor director = new(builder);
+
+            director.ConstruirCarroSedan();
+
+            Veiculo _carroSedan = builder.ObterVeiculo();
+
+            Console.WriteLine($"Criado uma veículo do tipo: {_carroSedan.TipoVeiculo}");
+
+            director.ConstruirTruck();
+
+            Veiculo _truck = builder.ObterVeiculo();
+
+            Console.WriteLine($"Criado uma veículo do tipo: {_truck.TipoVeiculo}");
+
+            Console.ReadLine();
         }
     }
 }
